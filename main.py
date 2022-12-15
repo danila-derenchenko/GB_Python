@@ -1,4 +1,4 @@
-'''print("Program 1")
+print("Program 1")
 
 number = input("Input number: ")
 lenght = len(number)
@@ -36,7 +36,7 @@ for i in range(n):
     number = (1 + (1 / number)) ** number
     result.append(number)
 
-print(sum(result))'''
+print(sum(result))
 
 print("Program 4")
 
