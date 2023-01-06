@@ -1,42 +1,49 @@
 import math
+import sympy
+from sympy import *
 
-print("Program 1")
+'''print("Program 1")
 
-a = [2, 3, 6, 7, 5]
-sum = 0
+d = float(input("Input d: "))
 
-for i in a:
-    if a.index(i) % 2 != 0:
-        sum += i
-print(sum)
+print(round(math.pi, len(str(d).split('.')[1])))
 
 print("Program 2")
 
-a = [2, 3, 5, 6]
+n = int(input("Input n: "))
 
-first = 0
-end = len(a) - 1
+def Factor(n):
+    Ans = set()
+    d = 2
+    while d * d <= n:
+        if n % d == 0:
+            Ans.add(d)
+            n //= d
+        else:
+            d += 1
+    if n > 1:
+        Ans.add(n)
+    return Ans
 
-result = []
-
-for i in range((len(a) // 2)):
-    result.append(a[first] * a[end])
-    first += 1
-    end -= 1
-
-print(result)
+print(Factor(144))
 
 print("Program 3")
 
-a = [1.1, 1.2, 3.1, 5, 10.01]
+a = [2, 5, 7, 3, 2, 9, 3, 6, 45, 74, 72, 325, 45]
 
-b = [round(math.modf(x)[0], 4) for x in a if round(math.modf(x)[0], 4) != 0.0]
+result = set()
 
-print(max(b) - min(b))
+for i in a:
+    result.add(i)
+
+print(result)'''
 
 print("Program 4")
 
-a = bin(int(input("Input number: ")))
-a = a[2:]
+a = "4*x**2+1*x+4"
+res = ""
 
-print(int(a))
+for i in range(len(a)):
+    for j in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        if a[i] == j and a[i - 1] != "*":
+            print(a[i])
