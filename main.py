@@ -1,8 +1,6 @@
 import math
-import sympy
-from sympy import *
 
-'''print("Program 1")
+print("Program 1")
 
 d = float(input("Input d: "))
 
@@ -36,14 +34,34 @@ result = set()
 for i in a:
     result.add(i)
 
-print(result)'''
+print(result)
 
 print("Program 4")
 
-a = "4*x**2+1*x+4"
-res = ""
+def coeffc(exp):
+    coeffc = []
+    for i in range(len(exp)):
+        for j in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            if exp[i] == j and exp[i - 1] != "*":
+                coeffc.append(exp[i])
+    return coeffc
 
-for i in range(len(a)):
-    for j in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-        if a[i] == j and a[i - 1] != "*":
-            print(a[i])
+def constructor(exp):
+    return str(exp[0]) + "x**2" + " + " + str(exp[1]) + "*x" + " + " + str(exp[2])
+
+coeff1 = []
+coeff2 = []
+
+with open("file1.txt") as f:
+    coeff1 = f.readline()
+
+with open("file2.txt") as f:
+    coeff2 = f.readline()
+
+coeff1 = coeffc(coeff1)
+coeff2 = coeffc(coeff2)
+summcoeff = []
+for i in range(len(coeff1)):
+    summcoeff.append(int(coeff1[i]) + int(coeff2[i]))
+
+print(constructor(summcoeff))
